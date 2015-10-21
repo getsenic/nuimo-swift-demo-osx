@@ -17,6 +17,15 @@ class NuimoTableViewDataSource : NSObject, NSTableViewDataSource {
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
-        return controllers[row].uuid
+        switch tableColumn?.identifier {
+        case .Some("uuid"): return controllers[row].uuid
+        case .Some("state"): return [
+            .Connecting: "Connecting",
+            .Connected: "Connected",
+            .Disconnecting: "Disconnecting",
+            .Disconnected: "Disconnected"
+            ][controllers[row].state]
+        default: return nil
+        }
     }
 }
