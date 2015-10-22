@@ -22,6 +22,7 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
         
         discoveryManager.delegate = self
         discoveryManager.discoverControllers()
+        discoveryManager.webSocketControllerURLs = ["ws://localhost:9999"]
     }
     
     func log(message: String, controller: NuimoController? = nil) {
