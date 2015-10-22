@@ -35,7 +35,7 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
         (tableView.dataSource() as! NuimoTableViewDataSource).controllers = []
         tableView.reloadData()
         log("Discovery started")
-        discoveryManager.discoverControllers()
+        discoveryManager.startDiscovery()
     }
     
     @IBAction func stopDiscovery(sender: AnyObject) {
