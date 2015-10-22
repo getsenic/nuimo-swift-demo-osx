@@ -58,7 +58,7 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
     
     //MARK: NuimoControllerDelegate
     
-    func nuimoController(controller: NuimoController, didReceiveGestureEvent gestureEvent: NuimoGestureEvent) {
-        log("\(gestureEvent.gesture.identifier), value: \(gestureEvent.value ?? 0)", controller: controller)
+    func nuimoController(controller: NuimoController, didReceiveGestureEvent event: NuimoGestureEvent) {
+        log("\(event.gesture.identifier), value: \(event.value ?? 0)", controller: controller)
     }
 }
