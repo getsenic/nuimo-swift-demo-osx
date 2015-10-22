@@ -18,11 +18,11 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         discoveryManager.delegate = self
-        discoveryManager.discoverControllers()
         discoveryManager.webSocketControllerURLs = ["ws://localhost:9999"]
+        
+        startDiscovery(self)
     }
     
     func log(message: String, controller: NuimoController? = nil) {
@@ -31,14 +31,16 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
         textView.scrollToEndOfDocument(self)
     }
     
-    @IBAction func startDiscovery(sender: NSButton) {
+    @IBAction func startDiscovery(sender: AnyObject) {
         (tableView.dataSource() as! NuimoTableViewDataSource).controllers = []
         tableView.reloadData()
+        log("Discovery started")
         discoveryManager.discoverControllers()
     }
     
-    @IBAction func stopDiscovery(sender: NSButton) {
+    @IBAction func stopDiscovery(sender: AnyObject) {
         discoveryManager.stopDiscovery()
+        log("Discovery stopped")
     }
     
     //MARK: NuimoDiscoveryDelegate

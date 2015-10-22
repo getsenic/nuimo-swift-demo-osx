@@ -20,9 +20,9 @@ class NuimoTableViewDataSource : NSObject, NSTableViewDataSource {
         switch tableColumn?.identifier {
         case .Some("uuid"): return controllers[row].uuid
         case .Some("state"): return [
-            .Connecting: "Connecting",
+            .Connecting: "Connecting...",
             .Connected: "Connected",
-            .Disconnecting: "Disconnecting",
+            .Disconnecting: "Disconnecting...",
             .Disconnected: "Disconnected"
             ][controllers[row].state]
         default: return nil
