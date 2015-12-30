@@ -1,7 +1,7 @@
 The Nuimo controller is an intuitive controller for your computer and connected smart devices. This document demonstrates how to integrate your iOS and MacOS applications with Nuimo controllers using the Nuimo Swift SDK.
 
 ## Installation
-[The Nuimo Swift SDK is available](https://cocoapods.org/pods/NuimoSwift) through [CocoaPods](https://cocoapods.org/), a very good dependency manager for Swift and Objective-C applications. (If you don't want to use CocoaPods just copy all `.swift` files from this repository into your Xcode project and skip to the next step.)
+[The Nuimo Swift SDK is available](https://cocoapods.org/pods/NuimoSwift) through [CocoaPods](https://cocoapods.org/), a very good dependency manager for Swift and Objective-C applications. (If you don't want to use CocoaPods just copy all `.swift` files from folder `SDK` into your Xcode project and skip to the next step.)
 
 ##### Prepare your project to use CocoaPods
 If you haven't set up your project yet to use CocoaPods, please follow these steps first:
@@ -22,7 +22,7 @@ If you haven't set up your project yet to use CocoaPods, please follow these ste
 ##### Add a dependency to the NuimoSwift SDK
 Edit your project's `Podfile` to add the following line:
 ```
-pod 'NuimoSwift'
+pod 'NuimoSwift', '~> 0.3.0'
 ```
 Then from a terminal within your project's root folder run:
 ```bash
@@ -73,7 +73,7 @@ class ViewController : UIViewController|NSViewController, NuimoDiscoveryDelegate
 
 #### A ready to checkout MacOS demo application
 
-We've provided a ready to checkout application that demonstrates discovering, connecting and receiving events from your Nuimo controllers. Simply clone the [Nuimo MacOS demo repository](https://github.com/getSenic/nuimo-swift-demo-osx) and run `pod install` before opening the project workspace. Hit the _Run_ button in Xcode to execute the application. Before that, make sure that the correct target `NuimoDemoOSX` is selected.
+We've provided a ready to checkout application that demonstrates discovering, connecting and receiving events from your Nuimo controllers. Simply clone the [Nuimo MacOS demo repository](https://github.com/getSenic/nuimo-swift-demo-osx), open the included Xcode workspace and hit the _Run_ button to execute the application. Before that, make sure that the correct target `NuimoDemoOSX` is selected.
 
 ## Advanced use cases
 The NuimoSwift SDK is much more powerful than the use cases presented above. More details to follow here soon.

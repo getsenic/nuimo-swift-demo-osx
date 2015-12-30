@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '41261BB6CDED734102BC6C9B'
+               BlueprintIdentifier = '71A4C366B79CC981E0EFC096'
                BlueprintName = 'NuimoSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'NuimoSwift.framework'>
