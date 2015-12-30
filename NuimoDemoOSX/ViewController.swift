@@ -61,4 +61,16 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
     func nuimoController(controller: NuimoController, didReceiveGestureEvent event: NuimoGestureEvent) {
         log("\(event.gesture.identifier), value: \(event.value ?? 0)", controller: controller)
     }
+
+    func nuimoControllerDidConnect(controller: NuimoController) {
+        tableView.reloadData()
+    }
+
+    func nuimoController(controller: NuimoController, didFailToConnect error: NSError?) {
+        tableView.reloadData()
+    }
+
+    func nuimoController(controller: NuimoController, didDisconnect error: NSError?) {
+        tableView.reloadData()
+    }
 }
