@@ -1,15 +1,12 @@
 PODS:
-  - NuimoSwift/Core (0.3.1)
-  - NuimoSwift/WebSockets (0.3.1):
-    - NuimoSwift/Core
-    - SwiftWebSocket
-  - SwiftWebSocket (2.4.0)
+  - NuimoSwift (0.3.2):
+    - NuimoSwift/Core (= 0.3.2)
+  - NuimoSwift/Core (0.3.2)
 
 DEPENDENCIES:
-  - NuimoSwift/WebSockets (~> 0.3.0)
+  - NuimoSwift (~> 0.3.0)
 
 SPEC CHECKSUMS:
-  NuimoSwift: 59fca2fe7a7b7fc3af6e2af96b36b793fc2c67dc
-  SwiftWebSocket: 6ca0d5e0947ebc62b47fc31d9cd078f6212aa5b2
+  NuimoSwift: ab658ec14b2474f7c041a9d28951a36dcdf51303
 
 COCOAPODS: 0.39.0

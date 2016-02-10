@@ -31,8 +31,8 @@ public class NuimoBluetoothController: BLEDevice, NuimoController {
     }
     
     public override func didConnect() {
-        super.didConnect()
         matrixWriter = nil
+        super.didConnect()
         //TODO: When the matrix characteristic is being found, didConnect() is fired. But if matrix characteristic is not found, didFailToConnect() should be fired instead!
     }
     
@@ -221,7 +221,11 @@ private extension NuimoGestureEvent {
     convenience init(gattFlyData data: NSData) {
         let bytes = UnsafePointer<UInt8>(data.bytes)
         let directionByte = bytes.memory
-        let gesture = flyGestureForDirectionByte[directionByte] ?? .Undefined
+        let speedByte = bytes.advancedBy(1).memory
+        print("direction byte: \(directionByte)")
+        print("speed byte: \(speedByte)")
+        //TODO: When firmware bug is fixed fallback to .Undefined gesture
+        let gesture: NuimoGesture = [0 : .FlyLeft, 1 : .FlyRight, 2 : .FlyBackwards, 3 : .FlyTowards][directionByte] ?? .FlyRight //.Undefined
         //TODO: Support fly up/down events
         self.init(gesture: gesture, value: nil)
     }
@@ -267,8 +271,6 @@ private extension NuimoGestureEvent {
         self.init(gesture: value == 1 ? .ButtonPress : .ButtonRelease, value: value)
     }
 }
-
-private let flyGestureForDirectionByte: [UInt8 : NuimoGesture] = [1 : .FlyLeft, 2 : .FlyRight, 3 : .FlyAway, 4 : .FlyTowards]
 
 //MARK: Matrix string to byte array conversion
 

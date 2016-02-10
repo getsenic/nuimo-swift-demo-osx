@@ -20,7 +20,6 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
         super.viewDidLoad()
         
         discoveryManager.delegate = self
-        discoveryManager.webSocketControllerURLs = ["ws://localhost:9999"]
         
         startDiscovery(self)
     }
