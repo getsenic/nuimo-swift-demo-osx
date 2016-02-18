@@ -21,14 +21,8 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         discoveryManager.delegate = self
-    }
-    
-    func log(message: String, controller: NuimoController? = nil) {
-        let prefix = controller != nil ? "[\(controller!.uuid)] " : ""
-        textView.textStorage?.appendAttributedString(NSAttributedString(string: "\(prefix)\(message)\n"))
-        textView.scrollToEndOfDocument(self)
     }
     
     @IBAction func startStopDiscovery(sender: AnyObject) {
@@ -44,14 +38,18 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
             discoveryButton.title = "Discover Nuimos"
         }
     }
+
+    func log(controller: NuimoController, message: String) {
+        textView.textStorage?.appendAttributedString(NSAttributedString(string: "[\(controller.uuid)] \(message)\n"))
+        textView.scrollToEndOfDocument(self)
+    }
     
     //MARK: NuimoDiscoveryDelegate
 
     func nuimoDiscoveryManager(discovery: NuimoDiscoveryManager, didDiscoverNuimoController controller: NuimoController) {
-        log("Found controller \(controller.uuid)")
+        log(controller, message: "Found controller")
         if controller.state == .Disconnected {
             controller.delegate = self
-            log("Trying to connect to controller")
             controller.connect()
         }
         (tableView.dataSource() as! NuimoTableViewDataSource).controllers += [controller]
@@ -66,7 +64,7 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
     //MARK: NuimoControllerDelegate
     
     func nuimoController(controller: NuimoController, didReceiveGestureEvent event: NuimoGestureEvent) {
-        log("\(event.gesture.identifier), value: \(event.value ?? 0)", controller: controller)
+        log(controller, message: "\(event.gesture.identifier), value: \(event.value ?? 0)")
     }
 
     func nuimoControllerDidConnect(controller: NuimoController) {
