@@ -12,6 +12,7 @@ import NuimoSwift
 class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerDelegate {
 
     @IBOutlet weak var discoveryButton: NSButton!
+    @IBOutlet weak var discoveryProgressIndicator: NSProgressIndicator!
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet var textView: NSTextView!
     
@@ -31,13 +32,17 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
     }
     
     @IBAction func startStopDiscovery(sender: AnyObject) {
-        log("Discovery started")
         isDiscovering = !isDiscovering
-        switch (isDiscovering) {
-        case true:  discoveryManager.startDiscovery()
-        case false: discoveryManager.stopDiscovery()
+        if (isDiscovering) {
+            discoveryManager.startDiscovery()
+            discoveryProgressIndicator.startAnimation(self)
+            discoveryButton.title = "Stop Discovery"
         }
-        discoveryButton.title = isDiscovering ? "Stop Discovery" : "Discover Nuimos"
+        else {
+            discoveryManager.stopDiscovery()
+            discoveryProgressIndicator.stopAnimation(self)
+            discoveryButton.title = "Discover Nuimos"
+        }
     }
     
     //MARK: NuimoDiscoveryDelegate

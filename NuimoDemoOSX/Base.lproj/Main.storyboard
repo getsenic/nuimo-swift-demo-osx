@@ -778,8 +778,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-JX-sqc">
+                                <rect key="frame" x="159" y="231" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Z9a-fI-B74"/>
+                                    <constraint firstAttribute="width" constant="16" id="qg9-sS-MkG"/>
+                                </constraints>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="uZd-JX-sqc" firstAttribute="leading" secondItem="dXb-T6-6hM" secondAttribute="trailing" constant="8" id="EKy-GE-YhP"/>
                             <constraint firstAttribute="trailing" secondItem="VOP-ZJ-a4N" secondAttribute="trailing" constant="20" id="L4b-bH-qC2"/>
                             <constraint firstItem="dXb-T6-6hM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Meb-gr-CdM"/>
                             <constraint firstItem="dXb-T6-6hM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Rkc-lh-1NA"/>
@@ -787,12 +795,14 @@
                             <constraint firstItem="TRW-bh-4vH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="cFp-HZ-Kk6"/>
                             <constraint firstItem="VOP-ZJ-a4N" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="eCd-oI-Tvq"/>
                             <constraint firstAttribute="trailing" secondItem="TRW-bh-4vH" secondAttribute="trailing" constant="20" id="p6i-QT-kqI"/>
+                            <constraint firstItem="uZd-JX-sqc" firstAttribute="centerY" secondItem="dXb-T6-6hM" secondAttribute="centerY" id="r1W-bO-vwL"/>
                             <constraint firstItem="VOP-ZJ-a4N" firstAttribute="top" secondItem="dXb-T6-6hM" secondAttribute="bottom" constant="20" id="veX-I5-fjW"/>
                             <constraint firstItem="TRW-bh-4vH" firstAttribute="top" secondItem="VOP-ZJ-a4N" secondAttribute="bottom" constant="8" id="xtv-cV-Dtf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="discoveryButton" destination="dXb-T6-6hM" id="Hku-g0-btW"/>
+                        <outlet property="discoveryProgressIndicator" destination="uZd-JX-sqc" id="ZN5-qP-kCp"/>
                         <outlet property="tableView" destination="0dP-wL-Bu8" id="V2p-hT-mU3"/>
                         <outlet property="textView" destination="nhA-PO-C7N" id="o6q-rE-Pvi"/>
                     </connections>
