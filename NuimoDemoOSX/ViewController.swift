@@ -52,6 +52,11 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
         (tableView.dataSource() as! NuimoTableViewDataSource).controllers += [controller]
         tableView.reloadData()
     }
+
+    func nuimoDiscoveryManager(discovery: NuimoDiscoveryManager, didInvalidateController controller: NuimoController) {
+        (tableView.dataSource() as! NuimoTableViewDataSource).controllers = (tableView.dataSource() as! NuimoTableViewDataSource).controllers.filter{ $0 !== controller }
+        tableView.reloadData()
+    }
     
     //MARK: NuimoControllerDelegate
     
