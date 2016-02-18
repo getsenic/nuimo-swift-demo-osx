@@ -11,17 +11,17 @@ import NuimoSwift
 
 class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerDelegate {
 
+    @IBOutlet weak var discoveryButton: NSButton!
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet var textView: NSTextView!
     
     private let discoveryManager = NuimoDiscoveryManager.sharedManager
+    private var isDiscovering = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         discoveryManager.delegate = self
-        
-        startDiscovery(self)
     }
     
     func log(message: String, controller: NuimoController? = nil) {
@@ -30,14 +30,14 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
         textView.scrollToEndOfDocument(self)
     }
     
-    @IBAction func startDiscovery(sender: AnyObject) {
+    @IBAction func startStopDiscovery(sender: AnyObject) {
         log("Discovery started")
-        discoveryManager.startDiscovery()
-    }
-    
-    @IBAction func stopDiscovery(sender: AnyObject) {
-        discoveryManager.stopDiscovery()
-        log("Discovery stopped")
+        isDiscovering = !isDiscovering
+        switch (isDiscovering) {
+        case true:  discoveryManager.startDiscovery()
+        case false: discoveryManager.stopDiscovery()
+        }
+        discoveryButton.title = isDiscovering ? "Stop Discovery" : "Discover Nuimos"
     }
     
     //MARK: NuimoDiscoveryDelegate

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="15B38b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9058"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -681,18 +681,17 @@
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="bgo-Cr-9Bb" id="0dP-wL-Bu8">
                                             <rect key="frame" x="0.0" y="0.0" width="438" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn identifier="uuid" width="116" minWidth="40" maxWidth="1000" id="Sox-4P-l7j">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="UUID">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="P6t-il-jW4">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" title="Text Cell" id="P6t-il-jW4">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -700,12 +699,12 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                 </tableColumn>
                                                 <tableColumn identifier="state" width="316" minWidth="40" maxWidth="1000" id="Ayp-cG-8pc">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="State">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Vxz-ZT-hhW">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" title="Text Cell" id="Vxz-ZT-hhW">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -719,27 +718,22 @@
                                             </connections>
                                         </tableView>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="C60-cq-Q0o"/>
                                 </constraints>
-                                <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Txt-gH-Vrj">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ZFw-YW-Igc">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="bgo-Cr-9Bb">
                                     <rect key="frame" x="0.0" y="0.0" width="438" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dXb-T6-6hM">
@@ -748,28 +742,12 @@
                                     <constraint firstAttribute="height" constant="21" id="OMT-vr-3GN"/>
                                     <constraint firstAttribute="width" constant="131" id="beT-x0-uG7"/>
                                 </constraints>
-                                <animations/>
                                 <buttonCell key="cell" type="push" title="Discover Nuimos" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s35-td-oaY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="startDiscovery:" target="XfG-lQ-9wD" id="d7o-4J-vbB"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-KV-Dfi">
-                                <rect key="frame" x="162" y="222" width="132" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="NJH-Ke-66C"/>
-                                    <constraint firstAttribute="width" constant="120" id="YGl-sz-dn5"/>
-                                </constraints>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Stop Discovery" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Am4-sa-1FM">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="stopDiscovery:" target="XfG-lQ-9wD" id="vt0-AX-SOJ"/>
+                                    <action selector="startStopDiscovery:" target="XfG-lQ-9wD" id="8mg-V6-g1n"/>
                                 </connections>
                             </button>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRW-bh-4vH">
@@ -781,7 +759,6 @@
                                         <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="nhA-PO-C7N">
                                             <rect key="frame" x="0.0" y="0.0" width="438" height="79"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="438" height="79"/>
                                             <size key="maxSize" width="463" height="10000000"/>
@@ -790,38 +767,32 @@
                                             <size key="maxSize" width="463" height="10000000"/>
                                         </textView>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
-                                <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="lzC-7f-5dP">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Yyk-YI-y2h">
                                     <rect key="frame" x="423" y="1" width="16" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="hlk-KV-Dfi" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="KaC-fG-IkU"/>
                             <constraint firstAttribute="trailing" secondItem="VOP-ZJ-a4N" secondAttribute="trailing" constant="20" id="L4b-bH-qC2"/>
                             <constraint firstItem="dXb-T6-6hM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Meb-gr-CdM"/>
                             <constraint firstItem="dXb-T6-6hM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Rkc-lh-1NA"/>
                             <constraint firstAttribute="bottom" secondItem="TRW-bh-4vH" secondAttribute="bottom" constant="20" id="SPg-hb-WR8"/>
-                            <constraint firstItem="hlk-KV-Dfi" firstAttribute="leading" secondItem="dXb-T6-6hM" secondAttribute="trailing" constant="17" id="YGI-iW-vwk"/>
                             <constraint firstItem="TRW-bh-4vH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="cFp-HZ-Kk6"/>
                             <constraint firstItem="VOP-ZJ-a4N" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="eCd-oI-Tvq"/>
-                            <constraint firstItem="VOP-ZJ-a4N" firstAttribute="top" secondItem="hlk-KV-Dfi" secondAttribute="bottom" constant="20" id="iEv-Vn-TlQ"/>
                             <constraint firstAttribute="trailing" secondItem="TRW-bh-4vH" secondAttribute="trailing" constant="20" id="p6i-QT-kqI"/>
+                            <constraint firstItem="VOP-ZJ-a4N" firstAttribute="top" secondItem="dXb-T6-6hM" secondAttribute="bottom" constant="20" id="veX-I5-fjW"/>
                             <constraint firstItem="TRW-bh-4vH" firstAttribute="top" secondItem="VOP-ZJ-a4N" secondAttribute="bottom" constant="8" id="xtv-cV-Dtf"/>
                         </constraints>
-                        <animations/>
                     </view>
                     <connections>
+                        <outlet property="discoveryButton" destination="dXb-T6-6hM" id="Hku-g0-btW"/>
                         <outlet property="tableView" destination="0dP-wL-Bu8" id="V2p-hT-mU3"/>
                         <outlet property="textView" destination="nhA-PO-C7N" id="o6q-rE-Pvi"/>
                     </connections>
