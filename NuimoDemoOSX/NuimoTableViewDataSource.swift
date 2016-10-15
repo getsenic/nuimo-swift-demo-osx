@@ -24,7 +24,7 @@ class NuimoTableViewDataSource : NSObject, NSTableViewDataSource {
             .Connected: "Connected",
             .Disconnecting: "Disconnecting...",
             .Disconnected: "Disconnected"
-            ][controllers[row].state]
+            ][controllers[row].connectionState]
         default: return nil
         }
     }

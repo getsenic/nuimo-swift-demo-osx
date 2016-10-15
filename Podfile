@@ -1,4 +1,7 @@
 platform :osx, '10.9'
+
 use_frameworks!
 
-pod 'NuimoSwift', '~> 0.3.0'
+target 'NuimoDemoOSX' do
+    pod 'NuimoSwift', '~> 0.7.1'
+end

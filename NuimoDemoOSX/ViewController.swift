@@ -48,7 +48,7 @@ class ViewController: NSViewController, NuimoDiscoveryDelegate, NuimoControllerD
 
     func nuimoDiscoveryManager(discovery: NuimoDiscoveryManager, didDiscoverNuimoController controller: NuimoController) {
         log(controller, message: "Found controller")
-        if controller.state == .Disconnected {
+        if controller.connectionState == .Disconnected {
             controller.delegate = self
             controller.connect()
         }

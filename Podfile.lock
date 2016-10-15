@@ -1,12 +1,12 @@
 PODS:
-  - NuimoSwift (0.3.2):
-    - NuimoSwift/Core (= 0.3.2)
-  - NuimoSwift/Core (0.3.2)
+  - NuimoSwift (0.7.1)
 
 DEPENDENCIES:
-  - NuimoSwift (~> 0.3.0)
+  - NuimoSwift (~> 0.7.1)
 
 SPEC CHECKSUMS:
-  NuimoSwift: ab658ec14b2474f7c041a9d28951a36dcdf51303
+  NuimoSwift: 16fb6130dce914b0bb018864aa26f822b7802542
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: dc9002cb94a30e00f80c69f094d93a8ad775235a
+
+COCOAPODS: 1.1.0.rc.2
